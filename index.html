@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Help Nehad Mansour and her sister, who is battling cancer, with treatment, food and shelter after losing their home in Jabalia, Gaza. Goal: $30,000.">
+<meta property="og:title" content="Help Nehad Mansour and Her Sister Regain Hope">
+<meta property="og:description" content="Two sisters in northern Gaza need treatment, food and shelter. Goal: $30,000.">
+<meta property="og:image" content="photo.jpg">
+<title>Help Nehad Mansour and Her Sister Regain Hope and Build a Safer Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@400;500;600&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout: landscape photo stacked under heading, teal + terracotta */
+:root{--bg:#e9eeeb;--surface:#f6f9f7;--fg:#14262a;--muted:#4f6468;--line:#cddad6;--accent:#0e6b6b;--accent-fg:#ffffff;--slate:#b5532c;--panel:#0f2f33;--panel-fg:#eef6f4;--panel-muted:#a9c4c1;--panel-btn:#f0c58a;--display:'Fraunces','Amiri',Georgia,serif;--ui:'Outfit','Tajawal','Segoe UI',Tahoma,sans-serif;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1719;--surface:#132426;--fg:#e6f0ee;--muted:#9fb8b5;--line:#233a3c;--accent:#6fd0c8;--accent-fg:#06201f;--slate:#f0a07a;--panel:#112d30;--panel-fg:#eef6f4;--panel-muted:#a9c4c1;--panel-btn:#f0c58a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1719;--surface:#132426;--fg:#e6f0ee;--muted:#9fb8b5;--line:#233a3c;--accent:#6fd0c8;--accent-fg:#06201f;--slate:#f0a07a;--panel:#112d30;--panel-fg:#eef6f4;--panel-muted:#a9c4c1;--panel-btn:#f0c58a;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:17px;line-height:1.7;padding-inline:20px}
+#app{max-width:1080px;margin-inline:auto;padding-block:0 48px}
+#app[lang="en"] .ar,#app[lang="ar"] .en{display:none!important}
+#app[lang="ar"]{font-size:18px;line-height:1.95}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px;font-size:14px;color:var(--muted)}
+.bar b{font-family:var(--display);font-size:20px;color:var(--fg);font-weight:600}
+.lang{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:6px 16px;border-radius:999px;cursor:pointer}
+.lang:hover{border-color:var(--accent)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:20px 48px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,58px);line-height:1.12;text-wrap:balance}
+#app[lang="ar"] h1{line-height:1.4}
+.lead{font-size:19px;color:var(--muted);margin-top:18px;max-width:44ch;text-wrap:pretty}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-weight:600;font-size:17px;text-decoration:none;padding:13px 26px;border-radius:8px;border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-fg);cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.photo{max-width:420px;width:100%;justify-self:center}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 40%;border-radius:4px}
+
+.goal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,72px);padding-block:40px;border-block:1px solid var(--line);align-items:center}
+.goal .amt{display:flex;flex-direction:column}
+.goal .amt span{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+#app[lang="ar"] .goal .amt span{letter-spacing:0;font-size:16px}
+.goal .amt bdi{direction:ltr;unicode-bidi:isolate;font-family:var(--display);font-weight:700;font-size:clamp(48px,7vw,80px);line-height:1.05;color:var(--slate);font-variant-numeric:tabular-nums}
+.goal p{max-width:52ch;font-size:18px;text-wrap:pretty}
+
+.sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,72px);padding-block:56px;border-bottom:1px solid var(--line)}
+h2{font-family:var(--display);font-size:clamp(26px,3.4vw,38px);line-height:1.2;text-wrap:balance;font-weight:600}
+#app[lang="ar"] h2{line-height:1.5}
+.body{display:flex;flex-direction:column;gap:20px;max-width:62ch;font-size:18px}
+.body p{text-wrap:pretty}
+#app[lang="ar"] .body{font-size:19px}
+.pull{font-family:var(--display);font-size:25px;line-height:1.5;color:var(--accent);font-weight:500}
+
+.needs{display:grid;gap:0;max-width:62ch}
+.needs div{padding-block:16px;border-bottom:1px solid var(--line)}
+.needs div:first-child{border-top:1px solid var(--line)}
+.needs dt{font-family:var(--display);font-size:23px;font-weight:600;line-height:1.3}
+.needs dd{color:var(--muted);margin-top:2px;text-wrap:pretty}
+.note{margin-top:18px;max-width:62ch;color:var(--muted);font-size:16px}
+
+.donate{background:var(--panel);color:var(--panel-fg);border-radius:14px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:center;margin-top:56px}
+.donate h2{font-size:clamp(28px,4vw,44px);color:var(--panel-fg);font-weight:700}
+.donate p.t{margin-top:14px;color:var(--panel-muted);max-width:48ch;text-wrap:pretty}
+.donate .btn{background:var(--panel-btn);border-color:var(--panel-btn);color:#24150a;margin-top:24px;font-size:18px}
+.donate .btn.ghost{background:transparent;color:var(--panel-fg);border-color:#645a53;margin-inline-start:10px}
+.number{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px;color:var(--panel-muted);font-size:15px}
+.number bdi{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;color:var(--panel-fg);font-size:17px;letter-spacing:.03em;user-select:all}
+.chip{font:inherit;font-size:13px;border:1px solid #645a53;background:transparent;color:var(--panel-fg);padding:4px 12px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--panel-btn)}
+.qr{justify-self:center;text-align:center;font-size:14px;color:var(--panel-muted)}
+.qr img{display:block;width:min(210px,100%);height:auto;border:6px solid #fff;border-radius:8px;margin:0 auto 10px;background:#fff}
+.closing{padding-block:56px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,72px)}
+footer{padding-top:36px;color:var(--muted);font-size:14px}
+
+@media (max-width:820px){
+  .hero,.sec,.donate,.goal,.closing{grid-template-columns:minmax(0,1fr)}
+  .hero{padding-block:4px 36px}
+  .photo{justify-self:start;max-width:340px}
+  .donate .btn.ghost{margin-inline-start:0}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.chip,.lang{transition:filter .15s,border-color .15s}}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:62ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px}
+.card h3{font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:4px;line-height:1.3}
+.card p{color:var(--muted);font-size:16px;line-height:1.6}
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+
+</head>
+<body>
+<div id="app" lang="en" dir="ltr">
+  <div class="bar">
+    <b><span class="en">Nehad & her sister · Jabalia</span><span class="ar">نهاد وأختها · جباليا</span></b>
+    <button class="lang" id="lang" type="button" aria-label="Switch language / تبديل اللغة"><span class="en">العربية</span><span class="ar">English</span></button>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1><span class="en">Help Nehad Mansour and Her Sister Regain Hope and Build a Safer Life</span><span class="ar">ساعدوا نهاد منصور وأختها على استعادة الأمل وبناء حياة أكثر أمانًا</span></h1>
+      <p class="lead"><span class="en">A humanitarian campaign supporting two sisters in northern Gaza, for treatment, food, shelter and basic needs.</span><span class="ar">حملة إنسانية لدعم أختين من شمال غزة، لتوفير العلاج والغذاء والمأوى والاحتياجات الأساسية.</span></p>
+      <div class="cta-row">
+        <a class="btn donate-link" href="https://wa.me/970599708736" target="_blank" rel="noopener"><span class="en">Contact us on WhatsApp</span><span class="ar">تواصلوا معنا عبر واتساب</span></a>
+        <a class="btn ghost" href="#story"><span class="en">Read the story</span><span class="ar">اقرأوا القصة</span></a>
+      </div>
+    </div>
+    <figure class="photo"><img src="photo.jpg" alt="Two sisters sitting in front of a worn-out tent, with a crutch and a wheelchair beside them" width="1000" height="558"></figure>
+  </header>
+
+  <div class="goal">
+    <div class="amt"><span class="en">Fundraising goal</span><span class="ar">هدف الحملة</span><bdi>$30,000</bdi></div>
+    <p><span class="en">For treatment and health care, food and water, shelter, clothing, transport to medical services, and emergency needs.</span><span class="ar">للعلاج والرعاية الصحية، والغذاء والماء، والمأوى، والملابس، والتنقل إلى الخدمات الطبية، والاحتياجات الطارئة.</span></p>
+  </div>
+
+  <section class="sec" id="story">
+    <h2><span class="en">Nehad’s story</span><span class="ar">حكاية نهاد</span></h2>
+    <div class="body">
+      <p class="en">In Jabalia Camp, in northern Gaza, Nehad Mansour, a young woman who has lost both her father and her mother, is living through extremely difficult conditions after her home was completely destroyed.</p>
+      <p class="ar">في مخيم جباليا شمال قطاع غزة، تعيش نهاد منصور، الشابة التي فقدت أباها وأمها، ظروفًا إنسانية صعبة للغاية بعد أن دُمّر منزلها بالكامل.</p>
+      <p class="en">She now carries the responsibility of caring for her sister, who has special needs and is also battling cancer, and who needs ongoing treatment and health care.</p>
+      <p class="ar">وتجد نفسها اليوم مسؤولة عن رعاية أختها من ذوي الاحتياجات الخاصة، التي تعاني أيضًا من مرض السرطان وتحتاج إلى متابعة العلاج والرعاية الصحية.</p>
+      <p class="en">The home that once held them together is gone. A worn-out tent is now their shelter, with no steady income. Between the need for food, water, clothing and daily necessities, keeping up the treatment and securing medical needs remain their greatest challenges.</p>
+      <p class="ar">لم يعد المنزل الذي كان يجمعهما موجودًا، وأصبحت الخيمة المهترئة مأواهما الحالي، في ظل غياب مصدر دخل ثابت. وبين الحاجة إلى الغذاء والمياه والملابس ومستلزمات الحياة اليومية، تبقى متابعة العلاج وتأمين الاحتياجات الطبية من أكبر التحديات التي تواجههما.</p>
+      <p class="en pull">Nehad does what she can for her sister and stays by her side, but limited means make even the basics very hard to secure.</p>
+      <p class="ar pull">تحاول نهاد توفير ما تستطيع لأختها والوقوف إلى جانبها، لكن محدودية الإمكانات تجعل تأمين الاحتياجات الأساسية أمرًا بالغ الصعوبة.</p>
+      <p class="en">This campaign was launched so that help can reach them, ease their burdens, and provide for their basic needs in a way that protects their dignity and gives them safer, more stable conditions.</p>
+      <p class="ar">لهذا أُطلقت هذه الحملة لتصل المساعدة إليهما، وتخفّف الأعباء عنهما، وتوفّر احتياجاتهما الأساسية بما يحفظ كرامتهما ويمنحهما ظروفًا أكثر أمانًا واستقرارًا.</p>
+      
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="en">Why we ask for your help</span><span class="ar">لماذا نطلب مساعدتكم</span></h2>
+    <div>
+      <p class="en body" style="margin-bottom:24px">The $30,000 goal is planned to be divided approximately as follows:</p>
+      <p class="ar body" style="margin-bottom:24px">يُقدَّر توزيع المبلغ المستهدف <span dir="ltr" style="display:inline">$30,000</span> تقريبًا على النحو التالي:</p>
+      <dl class="needs">
+        <div><dt><span class="en">Treatment and health care — $10,000</span><span class="ar">العلاج والرعاية الصحية — <span dir="ltr" style="display:inline">$10,000</span></span></dt><dd><span class="en">Prescribed medicines, treatments and necessary tests.</span><span class="ar">الأدوية والعلاجات الموصوفة طبيًا والفحوصات اللازمة.</span></dd></div>
+        <div><dt><span class="en">Shelter — $6,000</span><span class="ar">المأوى — <span dir="ltr" style="display:inline">$6,000</span></span></dt><dd><span class="en">Improving living conditions and providing shelter supplies.</span><span class="ar">تحسين ظروف الإيواء وتوفير مستلزمات المأوى.</span></dd></div>
+        <div><dt><span class="en">Food and drinking water — $5,000</span><span class="ar">الغذاء ومياه الشرب — <span dir="ltr" style="display:inline">$5,000</span></span></dt><dd><span class="en">Daily food, clean water and everyday needs.</span><span class="ar">الغذاء ومياه الشرب والاحتياجات اليومية.</span></dd></div>
+        <div><dt><span class="en">Clothing and daily needs — $3,000</span><span class="ar">الملابس والاحتياجات اليومية — <span dir="ltr" style="display:inline">$3,000</span></span></dt><dd><span class="en">Clothes, hygiene items and personal care supplies.</span><span class="ar">الملابس ومستلزمات النظافة والرعاية الشخصية.</span></dd></div>
+        <div><dt><span class="en">Transport and access to medical care — $3,000</span><span class="ar">التنقل والوصول إلى الخدمات الطبية — <span dir="ltr" style="display:inline">$3,000</span></span></dt><dd><span class="en">Costs of reaching medical services.</span><span class="ar">تكاليف الوصول إلى الخدمات الطبية.</span></dd></div>
+        <div><dt><span class="en">Emergency and living needs — $3,000</span><span class="ar">الاحتياجات الطارئة والمعيشية — <span dir="ltr" style="display:inline">$3,000</span></span></dt><dd><span class="en">Urgent needs, covered according to actual priorities.</span><span class="ar">احتياجات طارئة تُغطّى وفق الأولويات الفعلية.</span></dd></div>
+      </dl>
+      <p class="note"><span class="en">This is an estimated breakdown and will follow actual needs and costs. Treatment and the most urgent needs come first.</span><span class="ar">هذا التوزيع تقديري وسيتبع الاحتياجات والتكاليف الفعلية، مع إعطاء الأولوية للعلاج والاحتياجات الأكثر إلحاحًا.</span></p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="en">How your donation can help</span><span class="ar">كيف يساعد تبرعكم</span></h2>
+    <div class="body">
+      <p class="en">Every contribution, whatever its size, can cover part of the basic needs and help with the costs of treatment, food and better shelter.</p>
+      <p class="ar">كل مساهمة، مهما كانت قيمتها، تسهم في توفير جزء من الاحتياجات الأساسية والمساعدة في تكاليف العلاج والغذاء وتحسين ظروف الإيواء.</p>
+      <p class="en pull">If you cannot donate, sharing this campaign with friends and family can help the appeal reach someone who can.</p>
+      <p class="ar pull">وإذا لم تتمكنوا من التبرع، فإن مشاركة الحملة مع الأصدقاء والعائلة قد تُوصل النداء إلى من يستطيع الدعم.</p>
+      
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="en">Transparency and trust</span><span class="ar">الشفافية والثقة</span></h2>
+    <div class="body">
+      <p class="en">We aim to use donations for the purposes described here, document expenses and available invoices, and share updates on the needs and aid provided, while respecting Nehad and her sister’s privacy and dignity.</p>
+      <p class="ar">نحرص على تخصيص التبرعات للأغراض الموضحة هنا، وتوثيق المصروفات والفواتير المتاحة، ونشر تحديثات عن الاحتياجات والمساعدات المقدَّمة، مع احترام خصوصية نهاد وأختها وكرامتهما.</p>
+      <p class="en">If the full goal is not reached, the most urgent needs will be prioritized, with a clear account of how funds are used.</p>
+      <p class="ar">وإذا لم يتحقق الهدف كاملًا، فستُعطى الأولوية للاحتياجات الأكثر إلحاحًا مع توضيح أوجه استخدام الأموال.</p>
+      
+    </div>
+  </section>
+
+  <section class="donate" id="donate">
+    <div>
+      <h2><span class="en">Donate or contact us on WhatsApp</span><span class="ar">للتبرع والاستفسار تواصلوا عبر واتساب</span></h2>
+      <p class="t"><span class="en">Send us a message and we will tell you how to help.</span><span class="ar">أرسلوا لنا رسالة وسنخبركم كيف تساعدون.</span></p>
+      <a class="btn donate-link" href="https://wa.me/970599708736" target="_blank" rel="noopener"><span class="en">Donate or contact us on WhatsApp</span><span class="ar">تبرعوا أو تواصلوا عبر واتساب</span></a>
+      <button class="btn ghost" id="share" type="button"><span class="en">Copy link to share</span><span class="ar">انسخوا رابط الحملة</span></button>
+      <div class="number">
+        <span class="en">Or message:</span><span class="ar">أو راسلوا الرقم:</span>
+        <bdi id="num">+970 59 970 8736</bdi>
+        <button class="chip" id="copy" type="button"><span class="en">Copy</span><span class="ar">نسخ</span></button>
+        <span id="copied" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="qr">
+      <img src="qr.jpg" alt="QR code that opens a WhatsApp chat" width="312" height="312">
+      <span class="en">Scan with your phone</span><span class="ar">امسحوا الرمز بهاتفكم</span>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2><span class="en">Together, we can turn solidarity into real help</span><span class="ar">معًا نحوّل التضامن إلى مساعدة حقيقية</span></h2>
+    <div class="body">
+      <p class="en">Your contribution can help Nehad and her sister get what they need, ease their daily burdens, and keep up their medical care. Please donate what suits you, or share the campaign to reach as many supporters as possible.</p>
+      <p class="ar">قد تساعد مساهمتكم نهاد وأختها في الحصول على الاحتياجات الضرورية، وتخفيف أعبائهما اليومية، ودعم استمرار الرعاية الطبية. تبرعوا بما يناسبكم أو شاركوا الحملة لتصل إلى أكبر عدد ممكن من الداعمين.</p>
+      <p class="en pull">Every contribution makes a difference, and every share may open a new door of hope. Thank you.</p>
+      <p class="ar pull">كل مساهمة تصنع فرقًا، وكل مشاركة قد تفتح بابًا جديدًا للأمل. شكرًا لكم.</p>
+      
+    </div>
+  </section>
+
+  <footer><span class="en">Nehad Mansour and her sister, Jabalia Camp, northern Gaza</span><span class="ar">نهاد منصور وأختها، مخيم جباليا، شمال غزة</span></footer>
+</div>
+
+<script>
+(function(){
+  var app=document.getElementById('app');
+  var T={en:{copied:'Copied',fail:'Select and copy the number',addr:'Copy the address from your browser',title:'Help Nehad Mansour and Her Sister Regain Hope and Build a Safer Life',msg:'Hello, I read the story of Nehad Mansour and her sister, who is battling cancer, in Jabalia, Gaza. I would like to help.'},
+         ar:{copied:'تم النسخ',fail:'حدّدوا الرقم وانسخوه',addr:'انسخوا العنوان من المتصفح',title:'نهاد وأختها · جباليا',msg:'مرحبًا، قرأت قصة نهاد منصور وأختها المصابة بالسرطان في جباليا، غزة. أودّ المساعدة.'}};
+  function links(){
+    var t=encodeURIComponent(T[app.lang].msg);
+    document.querySelectorAll('.donate-link').forEach(function(a){a.href='https://wa.me/970599708736?text='+t});
+  }
+  function setLang(l,save){
+    app.lang=l;app.dir=l==='ar'?'rtl':'ltr';document.title=T[l].title;links();
+    if(save){try{localStorage.setItem('lang',l)}catch(e){}}
+  }
+  var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+  setLang(saved==='ar'?'ar':'en',false);
+  document.getElementById('lang').addEventListener('click',function(){setLang(app.lang==='ar'?'en':'ar',true)});
+  var msg=document.getElementById('copied');
+  function say(s){msg.textContent=s;setTimeout(function(){msg.textContent=''},2200)}
+  function selectNum(){try{var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+  function copy(text,fallback){
+    try{navigator.clipboard.writeText(text).then(function(){say(T[app.lang].copied)},function(){fallback&&fallback()})}catch(e){fallback&&fallback()}
+  }
+  document.getElementById('copy').addEventListener('click',function(){copy('+970599708736',function(){selectNum();say(T[app.lang].fail)})});
+  document.getElementById('share').addEventListener('click',function(){copy(location.href.split('#')[0],function(){say(T[app.lang].addr)})});
+})();
+</script>
+
+</body>
+</html>
